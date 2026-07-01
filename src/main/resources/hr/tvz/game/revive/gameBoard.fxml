@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hr.tvz.game.revive.GameController"
+            prefWidth="1100" prefHeight="750"
+            style="-fx-background-color: #1a2a40;">
+
+    <top>
+        <VBox>
+            <MenuBar style="-fx-background-color: #0d1a2d;">
+                <menus>
+                    <Menu text="Igra">
+                        <items>
+                            <MenuItem text="Nova igra"/>
+                            <MenuItem text="Spremi"/>
+                            <MenuItem text="Učitaj"/>
+                        </items>
+                    </Menu>
+                    <Menu text="Replay">
+                        <items>
+                            <MenuItem text="Otvori replay"/>
+                        </items>
+                    </Menu>
+                    <Menu text="Pomoć">
+                        <items>
+                            <MenuItem text="O igri"/>
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+
+            <Label text="Karta Sveita"
+                   style="-fx-font-size: 18; -fx-text-fill: #e8f1f8; -fx-font-weight: bold;">
+                <padding>
+                    <Insets top="15" right="20" bottom="15" left="20"/>
+                </padding>
+            </Label>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="30">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <VBox spacing="10">
+                <Label text="Permafrost ploča"
+                       style="-fx-font-size: 16; -fx-text-fill: #a8d8f0; -fx-font-weight: bold;"/>
+                <GridPane hgap="8" vgap="8"
+                          style="-fx-background-color: #2a3d5c; -fx-padding: 15; -fx-background-radius: 8;"/>
+            </VBox>
+
+            <VBox spacing="15"
+                  style="-fx-background-color: #2a3d5c; -fx-padding: 20; -fx-background-radius: 8;">
+                <Label text="👤 Igrač 1"
+                       style="-fx-font-size: 16; -fx-text-fill: #ffd166; -fx-font-weight: bold;"/>
+                <Label text="Ruka:" style="-fx-text-fill: #e8f1f8;"/>
+                <HBox spacing="8" minHeight="60"
+                      style="-fx-background-color: #1a2a40; -fx-padding: 8; -fx-background-radius: 5;"/>
+                <Label text="Radnici:" style="-fx-text-fill: #e8f1f8;"/>
+                <HBox spacing="8" minHeight="50"
+                      style="-fx-background-color: #1a2a40; -fx-padding: 8; -fx-background-radius: 5;"/>
+
+                <Label text="👤 Igrač 2"
+                       style="-fx-font-size: 16; -fx-text-fill: #06d6a0; -fx-font-weight: bold;"/>
+                <Label text="Ruka:" style="-fx-text-fill: #e8f1f8;"/>
+                <HBox spacing="8" minHeight="60"
+                      style="-fx-background-color: #1a2a40; -fx-padding: 8; -fx-background-radius: 5;"/>
+                <Label text="Radnici:" style="-fx-text-fill: #e8f1f8;"/>
+                <HBox spacing="8" minHeight="50"
+                      style="-fx-background-color: #1a2a40; -fx-padding: 8; -fx-background-radius: 5;"/>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="20"
+              style="-fx-background-color: #0d1a2d; -fx-padding: 12;">
+            <Label text="Status..."
+                   style="-fx-text-fill: #a8d8f0; -fx-font-size: 13;"/>
+            <Label text="Bodovi: 0 | 0"
+                   style="-fx-text-fill: #ffd166; -fx-font-size: 13; -fx-font-weight: bold;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
