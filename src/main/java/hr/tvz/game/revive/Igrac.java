@@ -34,8 +34,8 @@ public class Igrac implements Serializable {
     }
 
     public boolean neiskoristenRadnik(){
-        for (Radnik r : radnici) {
-            if (!r.isIskoristen() ){
+        for (Radnik radnik : radnici) {
+            if (!radnik.isIskoristen() ){
                 return true;
             }
         }
@@ -64,4 +64,6 @@ public class Igrac implements Serializable {
     public int getBodovi() {
         return bodovi;
     }
+
+
 }

@@ -22,7 +22,7 @@
                 <menus>
                     <Menu text="Igra">
                         <items>
-                            <MenuItem text="Nova igra"/>
+                            <MenuItem fx:id="mainMenu" text="Nova igra" onAction="#onNewGame"/>
                             <MenuItem text="Spremi"/>
                             <MenuItem text="Učitaj"/>
                         </items>
@@ -33,14 +33,11 @@
                         </items>
                     </Menu>
                     <Menu text="Pomoć">
-                        <items>
-                            <MenuItem text="O igri"/>
-                        </items>
                     </Menu>
                 </menus>
             </MenuBar>
 
-            <Label text="Karta Sveita"
+            <Label text="Karta Svijeta"
                    style="-fx-font-size: 18; -fx-text-fill: #e8f1f8; -fx-font-weight: bold;">
                 <padding>
                     <Insets top="15" right="20" bottom="15" left="20"/>
@@ -58,29 +55,34 @@
             <VBox spacing="10">
                 <Label text="Permafrost ploča"
                        style="-fx-font-size: 16; -fx-text-fill: #a8d8f0; -fx-font-weight: bold;"/>
-                <GridPane hgap="8" vgap="8"
+                <GridPane fx:id="permafrostGrid" hgap="8" vgap="8"
                           style="-fx-background-color: #2a3d5c; -fx-padding: 15; -fx-background-radius: 8;"/>
             </VBox>
 
-            <VBox spacing="15"
-                  style="-fx-background-color: #2a3d5c; -fx-padding: 20; -fx-background-radius: 8;">
-                <Label text="👤 Igrač 1"
-                       style="-fx-font-size: 16; -fx-text-fill: #ffd166; -fx-font-weight: bold;"/>
-                <Label text="Ruka:" style="-fx-text-fill: #e8f1f8;"/>
-                <HBox spacing="8" minHeight="60"
-                      style="-fx-background-color: #1a2a40; -fx-padding: 8; -fx-background-radius: 5;"/>
-                <Label text="Radnici:" style="-fx-text-fill: #e8f1f8;"/>
-                <HBox spacing="8" minHeight="50"
-                      style="-fx-background-color: #1a2a40; -fx-padding: 8; -fx-background-radius: 5;"/>
+            <VBox spacing="15">
+                <VBox fx:id="igrac1Panel" spacing="10"
+                      style="-fx-background-color: #2a3d5c; -fx-padding: 20; -fx-background-radius: 8;">
+                    <Label text="👤 Igrač 1"
+                           style="-fx-font-size: 16; -fx-text-fill: #ffd166; -fx-font-weight: bold;"/>
+                    <Label text="Karte 1. igrača:" style="-fx-text-fill: #e8f1f8;"/>
+                    <HBox fx:id="kartePrvogIgracaBox" spacing="8" minHeight="60"
+                          style="-fx-background-color: #1a2a40; -fx-padding: 8; -fx-background-radius: 5;"/>
+                    <Label text="Radnici:" style="-fx-text-fill: #e8f1f8;"/>
+                    <HBox fx:id="radniciPrvogIgracaBox" spacing="8" minHeight="50"
+                          style="-fx-background-color: #1a2a40; -fx-padding: 8; -fx-background-radius: 5;"/>
+                </VBox>
 
-                <Label text="👤 Igrač 2"
-                       style="-fx-font-size: 16; -fx-text-fill: #06d6a0; -fx-font-weight: bold;"/>
-                <Label text="Ruka:" style="-fx-text-fill: #e8f1f8;"/>
-                <HBox spacing="8" minHeight="60"
-                      style="-fx-background-color: #1a2a40; -fx-padding: 8; -fx-background-radius: 5;"/>
-                <Label text="Radnici:" style="-fx-text-fill: #e8f1f8;"/>
-                <HBox spacing="8" minHeight="50"
-                      style="-fx-background-color: #1a2a40; -fx-padding: 8; -fx-background-radius: 5;"/>
+                <VBox fx:id="igrac2Panel" spacing="10"
+                      style="-fx-background-color: #2a3d5c; -fx-padding: 20; -fx-background-radius: 8;">
+                    <Label text="👤 Igrač 2"
+                           style="-fx-font-size: 16; -fx-text-fill: #06d6a0; -fx-font-weight: bold;"/>
+                    <Label text="Karte 2. igrača:" style="-fx-text-fill: #e8f1f8;"/>
+                    <HBox fx:id="karteDrugogIgracaBox" spacing="8" minHeight="60"
+                          style="-fx-background-color: #1a2a40; -fx-padding: 8; -fx-background-radius: 5;"/>
+                    <Label text="Radnici:" style="-fx-text-fill: #e8f1f8;"/>
+                    <HBox fx:id="radniciDrugogIgracaBox" spacing="8" minHeight="50"
+                          style="-fx-background-color: #1a2a40; -fx-padding: 8; -fx-background-radius: 5;"/>
+                </VBox>
             </VBox>
         </HBox>
     </center>
@@ -88,9 +90,9 @@
     <bottom>
         <HBox spacing="20"
               style="-fx-background-color: #0d1a2d; -fx-padding: 12;">
-            <Label text="Status..."
+            <Label fx:id="statusLabel" text="Status..."
                    style="-fx-text-fill: #a8d8f0; -fx-font-size: 13;"/>
-            <Label text="Bodovi: 0 | 0"
+            <Label fx:id="bodoviLabel" text="Bodovi: 0 | 0"
                    style="-fx-text-fill: #ffd166; -fx-font-size: 13; -fx-font-weight: bold;"/>
         </HBox>
     </bottom>

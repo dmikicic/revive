@@ -12,7 +12,7 @@ public class ReviveEngine implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-   private final PermaFrostPloca ploca;
+   private PermaFrostPloca ploca;
    private final KartaSvijeta kartaSvijeta;
    private final List<Igrac> igraci;
    private int trenutnaRunda;
@@ -21,8 +21,6 @@ public class ReviveEngine implements Serializable {
 
    private static final int BROJ_RUNDI = 5;
    private static final int BROJ_IGRACA = 2;
-   private static final String POBJEDNIK1 = " pobjednik je igrac1";
-   private static final String POBJEDNIK2 = "pobjednik je igrac2";
 
    public ReviveEngine() {
        this.ploca = FactoryUtils.kreirajPermaFrostPlocu();
@@ -38,8 +36,8 @@ public class ReviveEngine implements Serializable {
        this.indeksTrenutnogIgraca = 0;
        this.fazaIgre = FazaIgre.ODABIR;
 
-       for (Igrac igrac : igraci) {    //svaki igrac vuce 3 karte
-           for (int i = 0; i < 3; i++) {
+       for (Igrac igrac : igraci) {    //svaki igrac vuce 4 karte
+           for (int i = 0; i < 4; i++) {
                igrac.getPlayerBoard().vuciKartu();
            }
        }
@@ -104,10 +102,11 @@ public class ReviveEngine implements Serializable {
            }
        }
        for (Igrac igrac : igraci) {
-           for(int i = 0; i < 2; i++){
+           for(int i = 0; i < 4; i++){
                igrac.getPlayerBoard().vuciKartu(); //live coding: dodati try ako je spil prazan
            }
        }
+       this.ploca = FactoryUtils.kreirajPermaFrostPlocu();
        trenutnaRunda++;
 
        if (trenutnaRunda > BROJ_RUNDI){

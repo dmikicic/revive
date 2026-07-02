@@ -43,7 +43,7 @@ public class FactoryUtils {
     }
 
     public static PermaFrostPloca kreirajPermaFrostPlocu(){
-        PermaFrostPolje [][] matrica = new PermaFrostPolje[4][4];  //ovo ce biti za live coding da ispravim nasumicni odabir: T
+        PermaFrostPolje [][] matrica = new PermaFrostPolje[4][4];  //ovo ce biti za live coding da ispravim nasumicni odabir:
          //TipBonusa[] sviBonusi = TipBonusa.values();
         for (int i = 0; i<4; i++){
             for (int j = 0; j < 4; j++){
