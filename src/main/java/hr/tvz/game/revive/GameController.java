@@ -161,6 +161,15 @@ public class GameController {
         odabranaKarta = null;
         odabranRadnik = null;
         osvjeziUI();
+
+        if(reviveEngine.isKrajIgre()){
+            Igrac pobjednik = reviveEngine.getPobjednika();
+            if(pobjednik == nulll){
+                statusLabel.setText("Kraj igre! Neriješeno!")
+            } else {
+                statusLabel.setText("Pobjeda! Pobjednik je + reviveEngine.getPobjednika().getIme()") //live coding 
+            }
+        }
     }
 
 }   
